@@ -5,3 +5,17 @@ class newsArticle:
     Args:
         
     '''
+
+    def __init__(self,id,urlToImage,publishedAt,url):
+        '''
+        fetching the necessary data to display the info in an article.
+
+        Args:
+            self.urlToImage = urlToImage
+            self.publishedAt = publishedAt
+            self.name = name
+        '''
+        self.id = id
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.url = url

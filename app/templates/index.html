@@ -1,22 +1,45 @@
 {% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
 <!-- Styles block -->
 
 
 <!-- Main page -->
-{% block content %}  
-    <div class= "container">
-        <div class = "header">
-            <h1>Nairobi Times</h1>
-        </div>
+{% block content %}
+<div class="container-fluid">
+  <div class="header">
+    <h1>Nairobi Times</h1>
+  </div>
 
-        <!-- All the news -->
-          <div class="row">
-            <ul>
-              {% for  source_news in sources_news %}
-                <li>{{source_news.description}}</li>
-              {% endfor %}  
-            </ul>
-          </div>
-    </div>   
+  <!-- All the news -->
+  <div class="row">
+    <ul>
+      <!-- {{ macro.newsOfTheDay(sources_news) }} -->
+    </ul>
+  </div>
+
+  <!-- sports -->
+  <div class='row'>
+    <div class="col">
+      <h1>Sports News</h1>
+      {{ macro.newsOfTheDay(sport_news) }}
+    </div>
+
+    <!-- business -->
+    <div class="col">
+      <h1>Business news</h1>
+        {{ macro.newsOfTheDay(business_news) }}
+    </div>
+
+    <!-- entertainment -->
+    <div class="col">
+      <h1> Entertainment News</h1>
+        {{ macro.newsOfTheDay(ent_results) }}
+    </div>
+
+    <!--  -->
+
+  </div>
+
+</div>
 {% endblock %}

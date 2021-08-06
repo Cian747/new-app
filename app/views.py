@@ -1,4 +1,4 @@
-from app.request import get_source
+from app.request import get_source, search_category
 from flask import render_template
 from app import app
 
@@ -10,5 +10,19 @@ def index():
     View root page function that returns the index page and its data
     '''
     title = 'Nairobi Times'
-    sources = get_source('entertainment')
-    return render_template('index.html', title = title, sources_news = sources)
+    sources = get_source()
+    business = search_category('business')
+    sports = search_category('sports')
+    entertainment = search_category('entertainment')
+    return render_template('index.html', title = title, sources_news = sources,business_news = business, ent_results = entertainment, sport_news = sports)
+
+@app.route('/search/string:id')
+def search():
+    '''
+    Find the article category and redirect
+    '''
+    business = search_category('business')
+    sports = search_category('sport')
+    entertainment = search_category('entertainment')
+
+    return render_template('search-news.html', business_news = business, ent_results = entertainment, sport_news = sports)

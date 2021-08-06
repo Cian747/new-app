@@ -1,8 +1,32 @@
 {% block search%}
-<div class = 'container'> 
+<div class='container'>
     <form action="">
-        <input type="text" name="input" id='name' # name >
-        <button class = 'btn btn-primary'></button>
+        <input type="text" name="input" id='name' # name>
+        <button class='btn btn-primary' type="submit"></button>
     </form>
+</div>
+
+
+<!-- sports -->
+<div class='row'>
+    <div class="col">
+        <!-- <h1>Sports News</h1> -->
+        {{ macro.newsOfTheDay(sport_news) }}
+    </div>
+
+    <!-- business -->
+    <div class="col">
+        <!-- <h1>Business news</h1> -->
+        <!-- {{ macro.newsOfTheDay(business_news) }} -->
+    </div>
+
+    <!-- entertainment -->
+    <div class="col">
+        <!-- <h1> Entertainment News</h1> -->
+        <!-- {{ macro.newsOfTheDay(ent_results) }} -->
+    </div>
+
+    <!--  -->
+
 </div>
 {% endblock %}

@@ -74,7 +74,7 @@ def search_category(category):
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
-        # news_results = None
+        news_results = None
 
         if get_news_response['sources']:
             news_results_list = get_news_response['sources']

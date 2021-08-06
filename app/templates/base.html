@@ -19,7 +19,9 @@
       {% endif %}
     </head>
   <body>
-    
+
+    {% block styles %}
+    {% endblock %}    
      <!-- Navbar block -->
       {% block navbar %}
         {% include 'navbar.html' %}

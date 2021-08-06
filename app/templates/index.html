@@ -2,41 +2,35 @@
 {% import 'macros.html' as macro %}
 
 <!-- Styles block -->
-
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 
 <!-- Main page -->
 {% block content %}
 <div class="container-fluid">
+  <div id="main">
   <div class="header">
     <h1>Nairobi Times</h1>
   </div>
 
+  <div class='info'>
+    <p>“ The purpose of our lives is to be happy.”</p>
+    <cite>— Dalai Lama.</cite>
+  </div>
   <!-- All the news -->
-  <div class="row">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
       {{ macro.newsOfTheDay(sources_news) }}
+      </div>
   </div>
 
-  <!-- sports -->
   <div class='row'>
-    <div class="col">
-      <!-- <h1>Sports News</h1> -->
-      <!-- {{ macro.newsOfTheDay(sport_news) }} -->
+    <div class='col'>
+      {{ macro.newsOfTheDay(entertainment) }}
     </div>
-
-    <!-- business -->
-    <div class="col">
-      <!-- <h1>Business news</h1> -->
-        <!-- {{ macro.newsOfTheDay(business_news) }} -->
-    </div>
-
-    <!-- entertainment -->
-    <div class="col">
-      <!-- <h1> Entertainment News</h1> -->
-        <!-- {{ macro.newsOfTheDay(ent_results) }} -->
-    </div>
-
-    <!--  -->
-
+  
   </div>
 
 </div>

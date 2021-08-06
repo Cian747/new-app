@@ -1,0 +1,15 @@
+#main{
+    background-color:silver;
+    padding: 100px;
+}
+
+.info{
+    padding: 40px;
+    font-size: 25px;
+    text-align: center;
+    font-style: italic;
+    border: 1px solid silver;
+}
+
+
+

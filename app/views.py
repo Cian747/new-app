@@ -11,12 +11,9 @@ def index():
     '''
     title = 'Nairobi Times'
     sources = get_source()
-    business = search_category('business')
-    sports = search_category('sports')
-    entertainment = search_category('entertainment')
-    return render_template('index.html', title = title, sources_news = sources,business_news = business, ent_results = entertainment, sport_news = sports)
+    return render_template('index.html', title = title, sources_news = sources)
 
-@app.route('/search/string:id')
+@app.route('/category')
 def search():
     '''
     Find the article category and redirect
@@ -26,3 +23,15 @@ def search():
     entertainment = search_category('entertainment')
 
     return render_template('search-news.html', business_news = business, ent_results = entertainment, sport_news = sports)
+
+
+@app.route('/entertainment')
+def entertainment():
+    '''
+    See all entertainment related news
+    '''
+    entertainment = search_category('entertainment')
+
+    return render_template('index.html', entertainment = entertainment)
+
+

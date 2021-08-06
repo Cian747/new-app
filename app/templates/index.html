@@ -13,7 +13,9 @@
         <!-- All the news -->
           <div class="row">
             <ul>
-              <li></li>
+              {% for  source_news in sources_news %}
+                <li>{{source_news.description}}</li>
+              {% endfor %}  
             </ul>
           </div>
     </div>   

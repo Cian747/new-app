@@ -1,17 +1,19 @@
 {% macro newsOfTheDay(news_list) %}
 
-    {% for news in news_list %}
-    <div class="card bg-dark text-white">
-        <img src="..." class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-      </div>
-    {% endfor %}
+{% for news in news_list %}
+<div class="col-md-3">
+  <div class="card bg-dark text-white">
+    <img src="{{ news.urlToImage }}" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{ news.name }}</h5>
+      <p class='card-text'>{{ news.station }}}</p>
+      <p class="card-text">{{ news.description }}</p>
+      <p class="card-text">{{ news.author }}}</p>
+      <a href="{{ news.url }}">Click here for more</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
-
-    
 
 {% endmacro %}

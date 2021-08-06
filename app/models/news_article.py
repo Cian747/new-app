@@ -6,7 +6,7 @@ class newsArticle:
         
     '''
 
-    def __init__(self,id,urlToImage,publishedAt,url):
+    def __init__(self,id,urlToImage,description,publishedAt,url):
         '''
         fetching the necessary data to display the info in an article.
 
@@ -17,5 +17,6 @@ class newsArticle:
         '''
         self.id = id
         self.urlToImage = urlToImage
+        self.description = description
         self.publishedAt = publishedAt
         self.url = url

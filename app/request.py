@@ -29,8 +29,8 @@ def get_source():
 
         news_results = None
 
-        if get_news_response['sources']:
-            news_results_list = get_news_response['sources']
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
 
 
@@ -58,12 +58,9 @@ def process_results(news_list):
         station = news_item.get('name')
         source = news_item.get('url')
 
-        article_object = News(title,station,author,description)
+    # if image:
+        article_object = News(title,station,author,image,description,source)
         news_results.append(article_object)
-
-    if image:
-        category_object = search(id,image,date_pick,source)
-        news_results.append(category_object)
 
     return news_results
 
@@ -85,3 +82,29 @@ def search_category(category):
 
 
     return news_results
+
+
+
+def category_results(news_list):
+    '''
+    Function  that processes the movie result and transform them to a list of Objects
+
+    Args:
+        movie_list: A list of dictionaries that contain movie details
+
+    Returns :
+        movie_results: A list of movie objects
+    '''
+    news_category_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        description = news_item.get('description')
+        date_pick = news_item.get('publishedAt')
+        image_jpg = news_item.get('urlToImage')
+        source = news_item.get('url')
+
+    if image_jpg:
+        category_object = search(id,image_jpg,description,date_pick,source)
+        news_category_results.append(category_object)
+
+    return news_category_results

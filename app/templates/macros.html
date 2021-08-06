@@ -1,10 +1,8 @@
 {% macro newsOfTheDay(news_list) %}
 
-
-
-  <div class="col-md-3">
-    {% for news in news_list %}
-    <div class="card" style="margin: 1rem; width: 100%;height:auto">
+  {% for news in news_list %}
+  <div class="col">
+    <div class="card">
       <img src="{{ news.urlToImage }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ news.title }}</h5>
@@ -12,16 +10,33 @@
         <p class="card-text"> {{ news.author }}</p>
         <p class="card-text"></p>
         <a href="news.url"><button class="btn btn-link">click here for more</button></a>
+        <p>Published on<cite>{{ news.publishedAt }}</cite></p>
       </div>
     </div>
-{% endfor %}
+    {% endfor %}
+
+  {% endmacro %}
+
+  {% macro categoryList(type_list) %}
+
+    {% for type in type_list or [] %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ type.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Country: {{ type.country }}</h6>
+        <p class="card-text"><cite>{{ type.description }}</cite></p>
+        <p class="card-text">Category: <cite>{{ type.category }}</cite></p>
+        <p class="card-text">language: <strong>{{ type.language }}</strong></p>
+        <a href="{{ type.url }}" class="card-link">Click here for more</a>
+      </div>
+    </div>
+    {% endfor %}
+
+  {% endmacro %}
 
 
-{% endmacro %}
 
 
 
 
-
-
-<!-- urlToImage,title,station,description,author,url -->
+  <!-- urlToImage,title,station,description,author,url -->

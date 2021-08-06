@@ -35,3 +35,39 @@ def entertainment():
     return render_template('index.html', entertainment = entertainment)
 
 
+@app.route('/sports')
+def sports():
+    '''
+    See all sports related news
+    '''
+    sports = search_category('sports')
+
+    return render_template('index.html', sports = sports)
+
+
+@app.route('/health')
+def health():
+    '''
+    See all sports related news
+    '''
+    health = search_category('health')
+
+    return render_template('index.html', health = health)
+
+@app.route('/business')
+def business():
+    '''
+    See all sports related news
+    '''
+    business = search_category('business')
+
+    return render_template('index.html', business = business)
+
+@app.route('/technology')
+def tech():
+    '''
+    See all sports related news
+    '''
+    technology = search_category('technology')
+
+    return render_template('index.html', technology = technology)

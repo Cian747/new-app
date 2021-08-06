@@ -59,7 +59,7 @@ def process_results(news_list):
         source = news_item.get('url')
 
     # if image:
-        article_object = News(title,station,author,image,description,source)
+        article_object = News(title,station,author,image,description,source,date_pick)
         news_results.append(article_object)
 
     return news_results
@@ -97,14 +97,15 @@ def category_results(news_list):
     '''
     news_category_results = []
     for news_item in news_list:
-        id = news_item.get('id')
+        name = news_item.get('name')
         description = news_item.get('description')
-        date_pick = news_item.get('publishedAt')
-        image_jpg = news_item.get('urlToImage')
+        category = news_item.get('category')
+        language = news_item.get('language')
         source = news_item.get('url')
+        country = news_item.get('country')
 
-    if image_jpg:
-        category_object = search(id,image_jpg,description,date_pick,source)
+    # if :
+        category_object = search(name,description,language,category,source,country)
         news_category_results.append(category_object)
 
     return news_category_results

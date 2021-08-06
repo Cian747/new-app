@@ -2,36 +2,60 @@
 {% import 'macros.html' as macro %}
 
 <!-- Styles block -->
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
 <!-- Main page -->
 {% block content %}
 <div class="container-fluid">
   <div id="main">
-  <div class="header">
-    <h1>Nairobi Times</h1>
-  </div>
-
-  <div class='info'>
-    <p>“ The purpose of our lives is to be happy.”</p>
-    <cite>— Dalai Lama.</cite>
-  </div>
-  <!-- All the news -->
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-      {{ macro.newsOfTheDay(sources_news) }}
-      </div>
-  </div>
-
-  <div class='row'>
-    <div class='col'>
-      {{ macro.newsOfTheDay(entertainment) }}
+    <div class="header">
+      <h1>Nairobi Times</h1>
     </div>
-  
-  </div>
 
-</div>
-{% endblock %}
+    <div class='info'>
+      <p>“ The purpose of our lives is to be happy.”</p>
+      <cite>— Dalai Lama.</cite>
+    </div>
+    <!-- All the news -->
+    <!-- <div class="row g-4"> -->
+    <!-- <div class="col-md-3"> -->
+    {{ macro.newsOfTheDay(sources_news) }}
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <!-- Entertainment routing -->
+    <div class='row'>
+      <!-- <div class='col'> -->
+      {{ macro.categoryList(entertainment) }}
+    </div>
+
+    <!-- Sports results -->
+    <div class='row'>
+      <!-- <div class='col'> -->
+      {{ macro.categoryList(sports) }}
+      <!-- </div> -->
+    </div>
+
+    <div class='row'>
+      <!-- <div class='col'> -->
+      {{ macro.categoryList(health) }}
+      <!-- </div> -->
+    </div>
+
+    <div class='row'>
+      <!-- <div class='col'> -->
+      {{ macro.categoryList(technology) }}
+      <!-- </div> -->
+    </div>
+
+    <div class='row'>
+      <!-- <div class='col'> -->
+      {{ macro.categoryList(business) }}
+      <!-- </div> -->
+    </div>
+
+  </div>
+  {% endblock %}

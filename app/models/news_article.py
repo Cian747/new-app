@@ -1,22 +1,21 @@
 class newsArticle:
     '''
     Fetch news data in articles
-
-    Args:
-        
     '''
 
-    def __init__(self,id,urlToImage,description,publishedAt,url):
+    def __init__(self,name,description,language,category,url,country):
         '''
         fetching the necessary data to display the info in an article.
 
         Args:
-            self.urlToImage = urlToImage
-            self.publishedAt = publishedAt
-            self.name = name
+            language = language of the news
+            category = picks the type of category ie. Business,Sports,Health
+            name = name of the station or site hosting
+            url = link to the page that's sources the news
         '''
-        self.id = id
-        self.urlToImage = urlToImage
+        self.name = name
         self.description = description
-        self.publishedAt = publishedAt
+        self.language = language
+        self.category = category
         self.url = url
+        self.country = country

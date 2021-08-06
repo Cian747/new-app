@@ -3,7 +3,7 @@ class newsSource:
     Generate the news in from a a country
     '''
 
-    def __init__(self,title,name,author,urlToImage,description,url):
+    def __init__(self,title,name,author,urlToImage,description,url,publishedAt):
         '''
         Initiate the news source class blueprint
 
@@ -19,3 +19,4 @@ class newsSource:
         self.urlToImage = urlToImage
         self.description = description
         self.url = url
+        self.publishedAt = publishedAt

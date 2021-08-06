@@ -1,32 +1,42 @@
-{% block search%}
-<div class='container'>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% block search %}
+
+<!-- Styles block -->
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/search.css')}}">
+{% endblock %}
+
+<div class='container-fluid' id='main'>
     <form action="">
         <input type="text" name="input" id='name' # name>
-        <button class='btn btn-primary' type="submit"></button>
+        <button class='btn btn-primary' type="submit">Search</button>
     </form>
-</div>
+
 
 
 <!-- sports -->
 <div class='row'>
     <div class="col">
         <!-- <h1>Sports News</h1> -->
-        {{ macro.newsOfTheDay(sport_news) }}
+        {{ macro.categoryList(sport_news) }}
     </div>
 
     <!-- business -->
     <div class="col">
         <!-- <h1>Business news</h1> -->
-        <!-- {{ macro.newsOfTheDay(business_news) }} -->
+        {{ macro.categoryList(business_news) }}
     </div>
 
     <!-- entertainment -->
     <div class="col">
         <!-- <h1> Entertainment News</h1> -->
-        <!-- {{ macro.newsOfTheDay(ent_results) }} -->
+        {{ macro.categoryList(ent_results) }}
     </div>
 
     <!--  -->
 
+</div>
 </div>
 {% endblock %}

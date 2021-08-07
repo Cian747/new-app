@@ -22,32 +22,42 @@
     </section>
     <hr>
     <div class="buttons">
-        <button type="button" class="btn btn-danger">CNN-NEWS</button>
-        <button type="button" class="btn btn-warning">BBC-NEWS</button>
-        <button type="button" class="btn btn-success">ABC-NEWS</button>
-        <button type="button" class="btn btn-link">AL-JAZEERA</button>
-        <button type="button" class="btn btn-dark">KTN-NEWS</button>
+       <a href="/CNN-NEWS"><button type="button" class="btn btn-danger">CNN-NEWS</button></a>
+        <a href="/BBC-NEWS"><button type="button" class="btn btn-warning">BBC-NEWS</button></a>
+        <a href="/ABC-NEWS"><button type="button" class="btn btn-success">ABC-NEWS</button></a>
+        <a href="/FOX-NEWS"><button type="button" class="btn btn-primary">FOX-NEWS</button></a>
     </div>
 
 
-<!-- sports -->
+<!-- general news -->
 <div class='row'>
     <div class="col">
-        <!-- <h1>Sports News</h1> -->
+        <h1>Latest News</h1>
         {{ macro.newsOfTheDay(general) }}
     </div>
 
-    <!-- business -->
-    <div class="col">
-        <!-- <h1>Business news</h1> -->
-        {{ macro.categoryList(business_news) }}
+    <!-- bbc -->
+    <div class="">
+        {{ macro.newsOfTheDay(bbc) }}
     </div>
 
-    <!-- entertainment -->
-    <div class="col">
-        <!-- <h1> Entertainment News</h1> -->
-        {{ macro.categoryList(ent_results) }}
+    <!-- cnn -->
+    <div class="">
+        {{ macro.newsOfTheDay(cnn) }}
     </div>
+
+    <!-- fox -->
+    <div class="">
+
+        {{ macro.newsOfTheDay(fox) }}
+    </div>
+
+
+    <!-- abc -->
+    <div class="col">
+        {{ macro.newsOfTheDay(abc) }}
+    </div>
+
 
     <!--  -->
 

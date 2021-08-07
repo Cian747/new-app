@@ -1,4 +1,4 @@
-from app.request import get_source, search_category
+from app.request import get_channel, get_source, search_category
 from flask import render_template
 from app import app
 
@@ -18,12 +18,9 @@ def search():
     '''
     Find the article category and redirect
     '''
-    business = search_category('business')
-    sports = search_category('sport')
-    entertainment = search_category('entertainment')
+    general = search_category('general')
 
-    return render_template('search-news.html', business_news = business, ent_results = entertainment, sport_news = sports)
-
+    return render_template('search-news.html', general = general)
 
 @app.route('/entertainment')
 def entertainment():
@@ -66,18 +63,46 @@ def business():
 @app.route('/technology')
 def tech():
     '''
-    See all sports related news
+    See all technology related news
     '''
     technology = search_category('technology')
 
     return render_template('index.html', technology = technology)
 
 
-@app.route('/general')
-def health():
-    '''
-    See all sports related news
-    '''
-    general = search_category('general')
 
-    return render_template('sources.html', general = general)
+@app.route('/BBC-NEWS')
+def bbc():
+    '''
+    Get all bbc related news
+    '''
+    bbc = get_channel('bbc-news')
+
+    return render_template('search-news.html', bbc = bbc)
+
+@app.route('/CNN-NEWS')
+def cnn():
+    '''
+    Get all cnn related news
+    '''
+    cnn = get_channel('cnn-news')
+
+    return render_template('search-news.html', cnn = cnn)
+
+@app.route('/ABC-NEWS')
+def abc():
+    '''
+    Get all bbc related news
+    '''
+    abc = get_channel('abc-news')
+
+    return render_template('search-news.html', abc = abc)
+
+@app.route('/FOX-NEWS')
+def fox():
+    '''
+    Get all bbc related news
+    '''
+    fox = get_channel('fox-news')
+
+    return render_template('search-news.html', fox = fox)

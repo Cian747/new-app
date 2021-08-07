@@ -7,8 +7,7 @@ class Config:
     NEWS_API_CATEGORY_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
     NEWS_API_CHANNEL_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 
-    # https://newsapi.org/v2/top-headlines?country=us&apiKey=b9cac6e7bd5b4295aca46e319913d53b
-    # https://newsapi.org/v2/top-headlines/sources?category=entertainementapiKey=b9cac6e7bd5b4295aca46e319913d53b'
+    # https://newsapi.org/v2/top-headlines?sources=bbc&apiKey=b9cac6e7bd5b4295aca46e319913d53b
 
     # SOURCES
     # BUSINESS

@@ -20,7 +20,7 @@
   {% macro categoryList(type_list) %}
 
     {% for type in type_list or [] %}
-    <div class="card" style="width: 18rem; margin: 2rem;">
+    <div class="card" style="width: 18rem; margin: 1rem;">
       <div class="card-body">
         <h5 class="card-title">{{ type.name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Country: {{ type.country }}</h6>

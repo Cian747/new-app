@@ -29,7 +29,7 @@ def entertainment():
     '''
     entertainment = search_category('entertainment')
 
-    return render_template('index.html', entertainment = entertainment)
+    return render_template('category.html', entertainment = entertainment)
 
 
 @app.route('/sports')
@@ -39,7 +39,7 @@ def sports():
     '''
     sports = search_category('sports')
 
-    return render_template('index.html', sports = sports)
+    return render_template('category.html', sports = sports)
 
 
 @app.route('/health')
@@ -49,7 +49,7 @@ def health():
     '''
     health = search_category('health')
 
-    return render_template('index.html', health = health)
+    return render_template('category.html', health = health)
 
 @app.route('/business')
 def business():
@@ -58,7 +58,7 @@ def business():
     '''
     business = search_category('business')
 
-    return render_template('index.html', business = business)
+    return render_template('category.html', business = business)
 
 @app.route('/technology')
 def tech():
@@ -67,7 +67,7 @@ def tech():
     '''
     technology = search_category('technology')
 
-    return render_template('index.html', technology = technology)
+    return render_template('category.html', technology = technology)
 
 
 

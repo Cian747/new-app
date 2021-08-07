@@ -71,3 +71,13 @@ def tech():
     technology = search_category('technology')
 
     return render_template('index.html', technology = technology)
+
+
+@app.route('/general')
+def health():
+    '''
+    See all sports related news
+    '''
+    general = search_category('general')
+
+    return render_template('sources.html', general = general)

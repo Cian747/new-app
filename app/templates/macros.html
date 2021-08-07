@@ -10,7 +10,7 @@
         <p class="card-text"> {{ news.author }}</p>
         <p class="card-text"></p>
         <a href="news.url"><button class="btn btn-link">click here for more</button></a>
-        <p>Published on<cite>{{ news.publishedAt }}</cite></p>
+        <p>Published on: <cite>{{ news.publishedAt }}</cite></p>
       </div>
     </div>
     {% endfor %}
@@ -20,7 +20,7 @@
   {% macro categoryList(type_list) %}
 
     {% for type in type_list or [] %}
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; margin: 2rem;">
       <div class="card-body">
         <h5 class="card-title">{{ type.name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Country: {{ type.country }}</h6>
@@ -39,4 +39,3 @@
 
 
 
-  <!-- urlToImage,title,station,description,author,url -->

@@ -2,3 +2,16 @@
 
     background-color:silver;
 }
+
+.buttons{
+    align-items: center;
+    display:block
+}
+
+#greeting{
+    text-align: center;
+    padding: 40px;
+    background-color: steelblue;
+    font-size: 40px;
+    justify-content:center;
+}

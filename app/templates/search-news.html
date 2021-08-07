@@ -14,13 +14,27 @@
         <button class='btn btn-primary' type="submit">Search</button>
     </form>
 
+    <section id='greeting'>
+        <div class='container'>
+            <h1>NEWS SOURCES</h1>
+            <p>Click one of the buttons to view the news source</p>
+        </div>
+    </section>
+    <hr>
+    <div class="buttons">
+        <button type="button" class="btn btn-danger">CNN-NEWS</button>
+        <button type="button" class="btn btn-warning">BBC-NEWS</button>
+        <button type="button" class="btn btn-success">ABC-NEWS</button>
+        <button type="button" class="btn btn-link">AL-JAZEERA</button>
+        <button type="button" class="btn btn-dark">KTN-NEWS</button>
+    </div>
 
 
 <!-- sports -->
 <div class='row'>
     <div class="col">
         <!-- <h1>Sports News</h1> -->
-        {{ macro.categoryList(sport_news) }}
+        {{ macro.newsOfTheDay(general) }}
     </div>
 
     <!-- business -->

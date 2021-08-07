@@ -4,7 +4,7 @@ from .models import news_source
 import urllib.request,json
 from .models import news_article
 
-search = news_article.newsArticle
+Find = news_article.newsArticle
 
 News = news_source.newsSource
 
@@ -15,6 +15,8 @@ api_key = NEWS_API_KEY
 news_source_url = app.config['NEWS_API_SOURCE_URL']
 
 news_category_url = app.config['NEWS_API_CATEGORY_URL']
+
+news_channel_url = app.config['NEWS_API_CHANNEL_URL']
 
 
 def get_source():
@@ -105,7 +107,27 @@ def category_results(news_list):
         country = news_item.get('country')
 
     # if :
-        category_object = search(name,description,language,category,source,country)
+        category_object = Find(name,description,language,category,source,country)
         news_category_results.append(category_object)
 
     return news_category_results
+
+
+def get_channel(channel_id):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_news_url = news_channel_url.format(channel_id,api_key)
+
+    with urllib.request.urlopen(get_news_url) as url:
+        get_news_data = url.read()
+        get_news_response = json.loads(get_news_data)
+
+        news_results = None
+
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
+            news_results = process_results(news_results_list)
+
+
+    return news_results

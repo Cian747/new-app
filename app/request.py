@@ -18,6 +18,8 @@ news_category_url = app.config['NEWS_API_CATEGORY_URL']
 
 news_channel_url = app.config['NEWS_API_CHANNEL_URL']
 
+news_search_url = app.config['NEWS_API_SEARCH_URL']
+
 
 def get_source():
     '''
@@ -41,13 +43,13 @@ def get_source():
 
 def process_results(news_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the news result and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain movie details
+        news_list: A list of dictionaries that contain news details
 
     Returns :
-        movie_results: A list of movie objects
+        news_results: A list of news objects
     '''
     news_results = []
     for news_item in news_list:
@@ -80,7 +82,7 @@ def search_category(category):
 
         if get_news_response['sources']:
             news_results_list = get_news_response['sources']
-            news_results = process_results(news_results_list)
+            news_results= category_results(news_results_list)
 
 
     return news_results
@@ -89,13 +91,13 @@ def search_category(category):
 
 def category_results(news_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the news result and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain movie details
+        news_list: A list of dictionaries that contain news details
 
     Returns :
-        movie_results: A list of movie objects
+        news_results: A list of news objects
     '''
     news_category_results = []
     for news_item in news_list:
@@ -120,6 +122,26 @@ def get_channel(channel_id):
     get_news_url = news_channel_url.format(channel_id,api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
+        get_news_data = url.read()
+        get_news_response = json.loads(get_news_data)
+
+        news_results = None
+
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
+            news_results = process_results(news_results_list)
+
+
+    return news_results
+
+
+def get_query(query):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_query_url = news_search_url.format(query,api_key)
+
+    with urllib.request.urlopen(get_query_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 

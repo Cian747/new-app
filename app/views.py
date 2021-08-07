@@ -1,4 +1,4 @@
-from app.request import get_channel, get_source, search_category
+from app.request import get_channel, get_query, get_source, search_category
 from flask import render_template
 from app import app
 
@@ -18,7 +18,7 @@ def search():
     '''
     Find the article category and redirect
     '''
-    general = search_category('general')
+    general = get_query('general')
 
     return render_template('search-news.html', general = general)
 

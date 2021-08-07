@@ -70,7 +70,6 @@ def tech():
     return render_template('category.html', technology = technology)
 
 
-
 @app.route('/BBC-NEWS')
 def bbc():
     '''

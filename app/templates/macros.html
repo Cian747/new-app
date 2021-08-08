@@ -10,7 +10,7 @@
         <p class="card-text"> {{ news.author }}</p>
         <p class="card-text"></p>
         <a href="news.url"><button class="btn btn-link">click here for more</button></a>
-        <p>Published on: <cite>{{ news.publishedAt }}</cite></p>
+        <p>Published on: <cite>{{ news.publishedAt | truncate(13) }}</cite></p>
       </div>
     </div>
     {% endfor %}

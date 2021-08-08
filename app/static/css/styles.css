@@ -1,5 +1,13 @@
 .card{
+    border:1px solid grey;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    height: auto;
+    background-color:beige;   
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    padding: 10px;
-
+.card:hover{
+    filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
 }

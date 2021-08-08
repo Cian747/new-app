@@ -47,7 +47,7 @@ def entertainment():
     '''
     entertainment = search_category('entertainment')
 
-    return render_template('category.html', entertainment = entertainment)
+    return render_template('category.html', cat_results = entertainment)
 
 
 @app.route('/sports')
@@ -57,7 +57,7 @@ def sports():
     '''
     sports = search_category('sports')
 
-    return render_template('category.html', sports = sports)
+    return render_template('category.html',cat_results = sports)
 
 
 @app.route('/health')
@@ -67,7 +67,7 @@ def health():
     '''
     health = search_category('health')
 
-    return render_template('category.html', health = health)
+    return render_template('category.html', cat_results = health)
 
 @app.route('/business')
 def business():
@@ -76,7 +76,7 @@ def business():
     '''
     business = search_category('business')
 
-    return render_template('category.html', business = business)
+    return render_template('category.html', cat_results = business)
 
 @app.route('/technology')
 def tech():
@@ -85,7 +85,7 @@ def tech():
     '''
     technology = search_category('technology')
 
-    return render_template('category.html', technology = technology)
+    return render_template('category.html', cat_results = technology)
 
 
 @app.route('/BBC-NEWS')

@@ -10,36 +10,11 @@
 {% block category %}
 <div class="container-fluid" id="cate-gory">
 
-  <!-- Entertainment routing -->
+ 
   <div class='row'>
     <!-- <div class='col'> -->
-    {{ macro.categoryList(entertainment) }}
+    {{ macro.categoryList(cat_results) }}
   </div>
-
-  <!-- Sports results -->
-  <div class='row'>
-    <!-- <div class='col'> -->
-    {{ macro.categoryList(sports) }}
-    <!-- </div> -->
-  </div>
-
-  <div class='row'>
-    <!-- <div class='col'> -->
-    {{ macro.categoryList(health) }}
-    <!-- </div> -->
-  </div>
-
-  <div class='row'>
-    <!-- <div class='col'> -->
-    {{ macro.categoryList(technology) }}
-    <!-- </div> -->
-
-
-    <div class='row'>
-      <!-- <div class='col'> -->
-      {{ macro.categoryList(business) }}
-      <!-- </div> -->
-    </div>
 
   </div>
   {% endblock %}

@@ -17,14 +17,13 @@
 
    
     <div class="container">
-      <form>
+      <form class="search-form d-flex p-4">
         <input type="text" name="search_query" placeholder="Search for an article" class="form-control">
         <button type="submit" value="Submit" class="btn btn-default">Submit</button>
       </form>
   
     </div>
 
-    <!-- All the news -->
     <div class="row g-4">
     <!-- <div class="col-md-3"> -->
     {{ macro.newsOfTheDay(sources_news) }}

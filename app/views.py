@@ -97,14 +97,14 @@ def bbc():
 
     return render_template('search-news.html', bbc = bbc)
 
-@app.route('/CNN-NEWS')
+@app.route('/BR-NEWS')
 def cnn():
     '''
     Get all cnn related news
     '''
-    cnn = get_channel('cnn-news')
+    Bleacher = get_channel('bleacher-report')
 
-    return render_template('search-news.html', cnn = cnn)
+    return render_template('search-news.html', Bleacher = Bleacher)
 
 @app.route('/ABC-NEWS')
 def abc():

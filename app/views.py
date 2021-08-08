@@ -95,7 +95,7 @@ def bbc():
     '''
     bbc = get_channel('bbc-news')
 
-    return render_template('search-news.html', bbc = bbc)
+    return render_template('search-news.html', news_source = bbc)
 
 @app.route('/BR-NEWS')
 def cnn():
@@ -104,7 +104,7 @@ def cnn():
     '''
     Bleacher = get_channel('bleacher-report')
 
-    return render_template('search-news.html', Bleacher = Bleacher)
+    return render_template('search-news.html', news_source = Bleacher)
 
 @app.route('/ABC-NEWS')
 def abc():
@@ -113,7 +113,7 @@ def abc():
     '''
     abc = get_channel('abc-news')
 
-    return render_template('search-news.html', abc = abc)
+    return render_template('search-news.html', news_source = abc)
 
 @app.route('/FOX-NEWS')
 def fox():
@@ -122,4 +122,4 @@ def fox():
     '''
     fox = get_channel('fox-news')
 
-    return render_template('search-news.html', fox = fox)
+    return render_template('search-news.html', news_source = fox)

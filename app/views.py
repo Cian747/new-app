@@ -1,5 +1,5 @@
 from app.request import get_channel, get_query, get_source, search_category
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
 
 # Views
@@ -11,7 +11,25 @@ def index():
     '''
     title = 'Nairobi Times'
     sources = get_source()
-    return render_template('index.html', title = title, sources_news = sources)
+
+    search_result = request.args.get('search_query')
+
+    if search_result:
+        return redirect(url_for('search_results', input_name = search_result))
+    else:
+        return render_template('index.html', title = title, sources_news = sources)
+
+
+@app.route('/results/<input_name>')
+def search_results(input_name):
+    '''
+    View function to display the search results
+    '''
+    query_name_list = input_name.split(" ")
+    query_name_format = "+".join(query_name_list)
+    searched_movies = get_query(query_name_format)
+    title = f'search results for {input_name}'
+    return render_template('results.html', title = title, found_results = searched_movies)    
 
 @app.route('/category')
 def search():

@@ -134,7 +134,6 @@ def get_channel(channel_id):
 
     return news_results
 
-
 def get_query(query):
     '''
     Function that gets the json response to our url request

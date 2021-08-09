@@ -71,7 +71,6 @@ def process_results(news_list):
         station = news_item.get('name')
         source = news_item.get('url')
 
-    # if image:
         article_object = News(title,station,author,image,description,source,date_pick)
         news_results.append(article_object)
 

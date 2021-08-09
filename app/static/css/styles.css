@@ -10,4 +10,5 @@
 
 .card:hover{
     filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+    cursor: pointer;
 }

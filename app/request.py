@@ -1,24 +1,33 @@
 from instance.config import NEWS_API_KEY
-from app import app
-from .models import news_source
+from .models import newsSource
 import urllib.request,json
-from .models import news_article
+from .models import newsArticle
 
-Find = news_article.newsArticle
+Find = newsArticle
 
-News = news_source.newsSource
+News = newsSource
 
-# Fetching the api_key
-api_key = NEWS_API_KEY
+# getting api key and urls
+api_key = None
+news_category_url = None
+news_channel_url = None
+news_search_url = None
+news_source_url = None
 
-# fetch the new source url
-news_source_url = app.config['NEWS_API_SOURCE_URL']
 
-news_category_url = app.config['NEWS_API_CATEGORY_URL']
+def configure_request(app):
+    global api_key,news_category_url,news_channel_url,news_search_url,news_source_url
 
-news_channel_url = app.config['NEWS_API_CHANNEL_URL']
+    news_source_url = app.config['NEWS_API_SOURCE_URL']
 
-news_search_url = app.config['NEWS_API_SEARCH_URL']
+    news_category_url = app.config['NEWS_API_CATEGORY_URL']
+
+    news_channel_url = app.config['NEWS_API_CHANNEL_URL']
+
+    news_search_url = app.config['NEWS_API_SEARCH_URL']
+
+    api_key = NEWS_API_KEY
+
 
 
 def get_source():

@@ -9,7 +9,6 @@ class testSource(unittest.TestCase):
     '''
     Tests article test and source classes
     '''
-
     def setUp(self):
         '''
         Initiallizing classes from both modules

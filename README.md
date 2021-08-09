@@ -29,6 +29,6 @@ None
 Reach out to me on cianomondi@gmail.com
 ### License
 
-[MIT LICENSE](https://opensource.org/licenses/MIT)
+[MIT LICENSE](license.txt)
 
 Copyright (c) 2021 **CIAN**

@@ -1,4 +1,3 @@
-from instance.config import NEW_API_KEY
 from .models import newsSource
 import urllib.request,json
 from .models import newsArticle
@@ -26,7 +25,7 @@ def configure_request(app):
 
     news_search_url = app.config['NEWS_API_SEARCH_URL']
 
-    api_key = NEW_API_KEY
+    api_key = app.config['NEW_API_KEY']
 
 
 
